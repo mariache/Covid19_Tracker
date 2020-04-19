@@ -1,12 +1,13 @@
 import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
+import { Spinner } from "../../components";
 import styles from "./Cards.module.css";
 import CountUp from "react-countup";
 import cx from "classnames";
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
-    return "Loading...";
+    return <Spinner />;
   }
   return (
     <div className={styles.container}>
@@ -26,7 +27,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               <CountUp
                 start={0}
                 end={confirmed.value}
-                duration={2.5}
+                duration={2}
                 separator=","
               />
             </Typography>
