@@ -15,9 +15,9 @@ const CountryPicker = ({ handleCountryChange }) => {
   }, [setFetchedCountries]);
 
   const sortedCountriesData = [
-    ...fetchedCountries.sort(
-      (a, b) => favoriteCountries(a) - favoriteCountries(b)
-    ),
+    ...fetchedCountries
+      .sort((a, b) => favoriteCountries(a) - favoriteCountries(b))
+      .slice(0, 5),
   ];
 
   return (
@@ -30,11 +30,20 @@ const CountryPicker = ({ handleCountryChange }) => {
         onChange={(e) => handleCountryChange(e.target.value)}
       >
         <option value="">Global</option>
-        {sortedCountriesData.map((country, idx) => (
-          <option key={idx} value={country}>
-            {country}
-          </option>
-        ))}
+        <optgroup label="Common">
+          {sortedCountriesData.map((country, idx) => (
+            <option key={idx} value={country}>
+              {country}
+            </option>
+          ))}
+        </optgroup>
+        <optgroup label="Other countries">
+          {fetchedCountries.sort().map((country, idx) => (
+            <option key={idx} value={country}>
+              {country}
+            </option>
+          ))}
+        </optgroup>
       </NativeSelect>
     </FormControl>
   );
