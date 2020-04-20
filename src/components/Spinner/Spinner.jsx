@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../images/covid-logo.png";
+import image from "../../images/_covid-logo.png";
 import styles from "./Spinner.module.css";
 
 const Spinner = () => {
