@@ -41,7 +41,11 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
             {
               ticks: {
                 callback: function (value, index, values) {
-                  return value / 1e6 + "M";
+                  return value >= 1e6
+                    ? value / 1e6 + "M"
+                    : value >= 1000 && value !== 0
+                    ? value / 1000 + "K"
+                    : value;
                 },
                 autoSkip: true,
                 maxTicksLimit: 10,
@@ -83,6 +87,28 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
       options={{
         legend: { display: false },
         title: { display: true, text: `Current state in ${country}` },
+        responsive: true,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                callback: function (value, index, values) {
+                  return value >= 1e6
+                    ? value / 1e6 + "M"
+                    : value >= 1000 && value !== 0
+                    ? value / 1000 + "K"
+                    : value;
+                },
+                autoSkip: true,
+                maxTicksLimit: 10,
+                beginAtZero: true,
+              },
+              gridLines: {
+                display: true,
+              },
+            },
+          ],
+        },
       }}
     />
   ) : null;
