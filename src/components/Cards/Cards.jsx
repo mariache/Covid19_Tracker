@@ -33,8 +33,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
-        {dataToMap.map((data) => (
+        {dataToMap.map((data, idx) => (
           <Grid
+            key={idx}
             item
             component={Card}
             xs={12}
