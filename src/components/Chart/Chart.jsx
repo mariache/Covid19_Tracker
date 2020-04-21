@@ -34,6 +34,33 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
           },
         ],
       }}
+      options={{
+        responsive: true,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                callback: function (value, index, values) {
+                  return value / 1e6 + "M";
+                },
+                autoSkip: true,
+                maxTicksLimit: 10,
+                beginAtZero: true,
+              },
+              gridLines: {
+                display: true,
+              },
+            },
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+        },
+      }}
     />
   ) : null;
 
