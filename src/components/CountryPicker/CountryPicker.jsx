@@ -17,7 +17,7 @@ const CountryPicker = ({ handleCountryChange }) => {
   const sortedCountriesData = [
     ...fetchedCountries
       .sort((a, b) => favoriteCountries(a) - favoriteCountries(b))
-      .slice(0, 5),
+      .slice(0, 6),
   ];
 
   return (
@@ -30,7 +30,7 @@ const CountryPicker = ({ handleCountryChange }) => {
         onChange={(e) => handleCountryChange(e.target.value)}
       >
         <option value="">Global</option>
-        <optgroup label="Common">
+        <optgroup label="Common countries">
           {sortedCountriesData.map((country, idx) => (
             <option key={idx} value={country}>
               {country}
