@@ -61,6 +61,10 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
               gridLines: {
                 display: false,
               },
+              type: "time",
+              time: {
+                unit: "month",
+              },
             },
           ],
         },
