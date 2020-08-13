@@ -24,9 +24,17 @@ class App extends React.Component {
     const { data, country } = this.state;
     return (
       <div className={styles.container}>
-        <img className={styles.image} src={image} alt="COVID-19" />
-        <h1 className={styles.label}>Live stats</h1>
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <div className={styles.app}>
+          <div className={styles.app__left}>
+            <div className={styles.app__header}>
+              <img className={styles.image} src={image} alt="COVID-19" />
+              <CountryPicker handleCountryChange={this.handleCountryChange} />
+            </div>
+          </div>
+        </div>
+        <h1 className={styles.header}>
+          {country ? `Live stats for ${country}` : "Live stats worldwide"}
+        </h1>
         <Cards data={data} />
         <Chart country={country} data={data} />
         <Footer data={data} />
