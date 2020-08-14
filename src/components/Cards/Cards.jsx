@@ -1,16 +1,15 @@
 import React from "react";
-import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import { Spinner } from "../../components";
+import { Grid } from "@material-ui/core";
 import styles from "./Cards.module.css";
-import CountUp from "react-countup";
-import cx from "classnames";
+import InfoCard from "../InfoCard/InfoCard";
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
     return <Spinner />;
   }
 
-  const dataToMap = [
+  const cardsData = [
     {
       type: "Infected",
       value: confirmed.value,
@@ -33,33 +32,15 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
-        {dataToMap.map((data, idx) => (
-          <Grid
-            key={idx}
-            item
-            component={Card}
-            xs={12}
-            md={3}
-            className={cx(styles.card, data.styles)}
-          >
-            <CardContent>
-              <Typography color="textSecondary" gutter="bottom">
-                {data.type}
-              </Typography>
-              <Typography variant="h5">
-                <CountUp
-                  start={0}
-                  end={data.value}
-                  duration={2}
-                  separator=","
-                />
-              </Typography>
-              <Typography color="textSecondary">
-                {new Date(lastUpdate).toDateString()}
-              </Typography>
-              <Typography variant="body2">{data.text}</Typography>
-            </CardContent>
-          </Grid>
+        {cardsData.map((data, idx) => (
+          <InfoCard
+            type={data.type}
+            styles={data.styles}
+            lastUpdate={lastUpdate}
+            text={data.text}
+            idx={idx}
+            value={data.value}
+          />
         ))}
       </Grid>
     </div>
