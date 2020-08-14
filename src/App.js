@@ -36,7 +36,7 @@ const App = () => {
       </h1>
       <Cards data={data} />
       <Chart country={country} data={data} />
-      <Footer data={data} />
+      <Footer lastUpdate={data ? data.lastUpdate : new Date()} />
     </div>
   );
 };
