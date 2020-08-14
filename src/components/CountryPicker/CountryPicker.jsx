@@ -20,16 +20,17 @@ const CountryPicker = ({ handleCountryChange }) => {
       .slice(0, 6),
   ];
 
+  const onHandleCountryChange = (e) => {
+    handleCountryChange(e.target.value);
+  };
+
   return (
     <FormControl className={styles.formControl}>
       <InputLabel shrink htmlFor="select-multiple-native">
         Please select
       </InputLabel>
-      <NativeSelect
-        defaultValue=""
-        onChange={(e) => handleCountryChange(e.target.value)}
-      >
-        <option value="">Global</option>
+      <NativeSelect defaultValue="" onChange={onHandleCountryChange}>
+        <option value="">Worldwide</option>
         <optgroup label="Common countries">
           {sortedCountriesData.map((country, idx) => (
             <option key={idx} value={country}>
