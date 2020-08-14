@@ -32,10 +32,14 @@ const App = () => {
         </div>
       </div>
       <h1 className={styles.header}>
-        {country ? `Live stats for ${country}` : "Live stats Worldwide"}
+        {!data?.confirmed
+          ? "Fetching data"
+          : country
+          ? `Live stats for ${country}`
+          : "Live stats Worldwide"}
       </h1>
       <Cards data={data} />
-      <Chart country={country} data={data} />
+      {data && <Chart country={country} data={data} />}
       <Footer lastUpdate={data ? data.lastUpdate : new Date()} />
     </div>
   );

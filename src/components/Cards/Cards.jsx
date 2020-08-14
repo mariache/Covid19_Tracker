@@ -4,27 +4,27 @@ import { Grid } from "@material-ui/core";
 import styles from "./Cards.module.css";
 import InfoCard from "../InfoCard/InfoCard";
 
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
-  if (!confirmed) {
+const Cards = ({ data }) => {
+  if (!data?.confirmed) {
     return <Spinner />;
   }
 
   const cardsData = [
     {
       type: "Infected",
-      value: confirmed.value,
+      value: data.confirmed.value,
       text: "Number of active COVID-19 cases",
       styles: styles.infected,
     },
     {
       type: "Recovered",
-      value: recovered.value,
+      value: data.recovered.value,
       text: "Number of recoveries from COVID-19",
       styles: styles.recovered,
     },
     {
       type: "Deaths",
-      value: deaths.value,
+      value: data.deaths.value,
       text: "Number of deaths caused by COVID-19",
       styles: styles.deaths,
     },
@@ -36,7 +36,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           <InfoCard
             type={data.type}
             styles={data.styles}
-            lastUpdate={lastUpdate}
+            lastUpdate={data.lastUpdate}
             text={data.text}
             idx={idx}
             value={data.value}
