@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import styles from "./InfoCard.module.css";
+import moment from "moment";
 import CountUp from "react-countup";
 import cx from "classnames";
 
@@ -22,7 +23,7 @@ const InfoCard = (props) => {
           <CountUp start={0} end={props.value} duration={2} separator="," />
         </Typography>
         <Typography color="textSecondary">
-          {new Date(props.lastUpdate).toDateString()}
+          {moment(props.lastUpdate).format("DD-MM-YYYY")}
         </Typography>
         <Typography variant="body2">{props.text}</Typography>
       </CardContent>
