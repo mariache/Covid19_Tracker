@@ -1271,11 +1271,11 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^7.28.1"
 
-"@testing-library/user-event@^12.1.6":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.5.0.tgz#7c6f69cee4dbd11037ac9c3f62c5d81b9a4ccf30"
+"@testing-library/user-event@^12.8.3":
+  version "12.8.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.8.3.tgz#1aa3ed4b9f79340a1e1836bc7f57c501e838704a"
   dependencies:
-    "@babel/runtime" "^7.10.2"
+    "@babel/runtime" "^7.12.5"
 
 "@types/aria-query@^4.2.0":
   version "4.2.0"
@@ -2546,9 +2546,9 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+classnames@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
 
 clean-css@^4.2.3:
   version "4.2.3"
@@ -5900,8 +5900,8 @@ memory-fs@^0.5.0:
     readable-stream "^2.0.1"
 
 merge-deep@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.2.tgz#f39fa100a4f1bd34ff29f7d2bf4508fbb8d83ad2"
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.3.tgz#1a2b2ae926da8b2ae93a0ac15d90cd1922766003"
   dependencies:
     arr-union "^3.1.0"
     clone-deep "^0.2.4"
@@ -7575,9 +7575,9 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
-react-chartjs-2@^2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-2.10.0.tgz#857e7f4788cae27e872624ba7826d53cf82f1ee6"
+react-chartjs-2@^2.11.2:
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-2.11.2.tgz#156c0d2618600561efc23bef278bd48a335cadb6"
   dependencies:
     lodash "^4.17.19"
     prop-types "^15.7.2"
