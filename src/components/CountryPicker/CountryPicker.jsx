@@ -20,8 +20,8 @@ const CountryPicker = ({ handleCountryChange }) => {
       .slice(0, 6),
   ];
 
-  const onHandleCountryChange = (e) => {
-    handleCountryChange(e.target.value);
+  const onHandleCountryChange = (event) => {
+    handleCountryChange(event.target.value);
   };
 
   return (
