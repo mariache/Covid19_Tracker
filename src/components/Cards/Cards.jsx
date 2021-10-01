@@ -13,19 +13,19 @@ const Cards = ({ data }) => {
     {
       type: "Infected",
       value: data.confirmed.value,
-      text: "Number of active COVID-19 cases",
+      text: "Number of active cases",
       styles: styles.infected,
     },
     {
       type: "Recovered",
       value: data.recovered.value,
-      text: "Number of recoveries from COVID-19",
+      text: "Number of recoveries",
       styles: styles.recovered,
     },
     {
       type: "Deaths",
       value: data.deaths.value,
-      text: "Number of deaths caused by COVID-19",
+      text: "Number of deaths",
       styles: styles.deaths,
     },
   ];
