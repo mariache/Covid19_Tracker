@@ -1,17 +1,15 @@
 export const favoriteCountries = (countries) => {
   switch (countries) {
-    case "China":
+    case "Russia":
       return 1;
-    case "Italy":
+    case "US":
       return 2;
     case "New Zealand":
       return 3;
-    case "Russia":
+    case "India":
       return 4;
-    case "Spain":
+    case "Brazil":
       return 5;
-    case "US":
-      return 6;
     default:
       return 100;
   }
